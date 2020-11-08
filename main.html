@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Bill Overview Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="main.css">
+<script src="js/Vendor.js"></script>
+<script src="js/main.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+
+
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Account</a>
+
+  </div>
+</div>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-black">Vendors</h1>
+      <!-- <script src = "table.js"></script>-->
+        <table>
+            <tr>
+            </tr>
+            <tr>
+            <!-- Make this table into the JavaScript File-->
+                <td>Mowing ewatwat</td>
+                <td>Got lawn mowed</td>
+                <td>Go here for 5$ dollar off lawn mowing</td>
+            </tr>
+        </table>
+    </div>
+  </div> 
+  <div class="vendor-search-box-container">
+    <div class="vendor-search-box">
+      <div class="search-container">
+        <div class="search">
+          <input id="zip-code-input" type="text" placeholder="Enter zip">
+          <i class="fas fa-search" onclick="searchVendors()"></i>
+        </div>
+      </div>
+      <div class="vendors-list-container">
+        <div class="vendors-list">
+          <div class="vender-container">
+            <div class="vendor-info-container">
+              <div class="vendor-address"></div>
+              <div class="vendor-phone-number"></div>
+            </div>
+          </div>
+          <div class="vendor-number-container"></div>
+        </div>
+      </div>
+    </div>
+    <div id="map"></div>
+  </div>
+  
+  </div>
+  
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// // Toggle between showing and hiding the sidebar, and add overlay effect
+// function w3_open() {
+//   if (mySidebar.style.display === 'block') {
+//     mySidebar.style.display = 'none';
+//     overlayBg.style.display = "none";
+//   } else {
+//     mySidebar.style.display = 'block';
+//     overlayBg.style.display = "block";
+//   }
+// }
+
+// // Close the sidebar with the close button
+// function w3_close() {
+//   mySidebar.style.display = "none";
+//   overlayBg.style.display = "none";
+// }
+</script>
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTXaizTGG1KDcFIjctKRwl8Ws2BmKnIwo&callback=initMap">
+</script>
+
+</body>
+</html>

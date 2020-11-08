@@ -1,0 +1,30 @@
+/* Style for registration page */
+.registration-container {
+    padding-top: 20px; 
+    padding-bottom: 20px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black; 
+}
+
+form {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+form input {
+    display: flex; 
+}
+
+.registration-container input {
+    margin-top: 8px; 
+    padding: 6px 10px; 
+    font-size: 25px;
+    background-color: transparent;
+    border: 1px solid gray;
+    color: black; 
+    border-radius: 5px;
+}
+

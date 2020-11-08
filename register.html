@@ -1,0 +1,41 @@
+<!-- User registration page -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fuel Predictor</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style/index.css">
+        <link rel="stylesheet" href="style/register.css">
+    </head>
+    <body>
+        <div class="registration-page container">
+            <header>
+                <div class="header-container">
+                    <div class="title">Register</div>
+                </div>
+            </header>
+
+            <div id="login-error-container">
+                <p id="login-error-msg">Password does not match</p>
+            </div>
+            <div id="login-error-container">
+                <p id="login-error-msg-2">Username already taken</p>
+            </div>
+
+            <div class="registration-container">
+                <div class="registration-title">Sign Up For a New Account</div>
+                <form>
+                    <input id="username-input" type="text" name="username" placeholder="Username">
+                    <input id="password-input" type="password" name="password" placeholder="Password">
+                    <input id="confirm-password-input" type="password" name="confirmed" placeholder="Confirm password">
+                </form>
+                 <div id="signup-button" onclick="registerUser()">Sign Up</div> 
+            </div>
+        </div>
+        <footer></footer>
+        <script src="js/register.js"></script>
+    </body>
+</html> 
+
