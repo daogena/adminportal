@@ -1,0 +1,38 @@
+.register-container {
+    width: 600px;
+    height: 550px;
+    background: #050404;
+    color: white;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px, 30px;}
+
+.title {
+    font-size: 5rem; 
+}
+
+form {
+    margin: 5rem; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.email-container, .password-container {
+    margin-bottom: 2rem; 
+    border: 1px solid black; 
+    height: 2rem; 
+    width: 30rem; 
+    font-size: 2rem;
+    outline: none;
+}
+
+.button {
+    height: 2rem; 
+    width: 8rem; 
+    font-size: 1.5rem; 
+    margin-bottom: 1rem; 
+}

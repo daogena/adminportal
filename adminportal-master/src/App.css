@@ -1,0 +1,25 @@
+body{
+  background-color: whitesmoke;
+}
+
+.app {
+  text-align: center;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: grey;
+
+}
+
+.navbar{
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
