@@ -1,1 +1,0 @@
-const authEndpoint = "https://api.bill.com/api/v2/"; 
