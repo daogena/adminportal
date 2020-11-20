@@ -1,8 +1,7 @@
-.login-container {
+.login-container, .admin-container {
     width: 600px;
     height: 550px;
-    background: #050404;
-    color: white;
+    background: white;
     top: 50%;
     left: 50%;
     position: absolute;
@@ -26,10 +25,12 @@ form {
 .email-container, .password-container {
     margin-bottom: 2rem; 
     border: 1px solid black; 
+    border-radius: 8px; 
     height: 2rem; 
     width: 30rem; 
     font-size: 2rem;
     outline: none;
+    padding: 10px; 
 }
 
 .button {

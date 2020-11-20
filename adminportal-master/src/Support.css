@@ -1,40 +1,23 @@
-.login-container {
-    width: 600px;
-    height: 550px;
-    background: #050404;
-    color: white;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    padding: 70px, 30px;
-
-}
-
-.title {
-    font-size: 5rem; 
-}
-
-form {
-    margin: 5rem; 
+.links-container {
     display: flex; 
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px; 
 }
 
-.email-container, .password-container {
-    margin-bottom: 2rem; 
+.link {
     border: 1px solid black; 
-    height: 2rem; 
-    width: 30rem; 
-    font-size: 2rem;
-    outline: none;
+    border-radius: 8px; 
+    padding: 10px; 
+    min-width: 70px; 
+    max-width: 100px;
+    margin-left: 20px; 
+    margin-bottom: 20px; 
+    transition: all .3s ease-in-out, color 0.2s 0.1s;
 }
 
-.button {
-    height: 2rem; 
-    width: 8rem; 
-    font-size: 1.5rem; 
-    margin-bottom: 1rem; 
+.link:hover {
+    cursor: pointer; 
+    color: white; 
+    background-color: black; 
 }
