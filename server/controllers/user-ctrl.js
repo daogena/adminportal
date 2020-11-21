@@ -3,7 +3,7 @@ const User = require('../models/user-model')
 
 createLogin = (req, res) => {
     const body = req.body
-
+    console.log("body: ", req.body);
     if (!body) {
         return res.status(400).json({
             success: false,
@@ -16,7 +16,7 @@ createLogin = (req, res) => {
     if (!user) {
         return res.status(400).json({ success: false, error: err })
     }
-
+    
     user
         .save()
         .then(() => {
@@ -32,6 +32,7 @@ createLogin = (req, res) => {
                 message: 'User not created!',
             })
         })
+
 }
 
 updateLogin = async (req, res) => {
@@ -119,10 +120,24 @@ getLogin = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
+login = async(req,res) =>{
+    let userData = req.body;
+    const user = await User.findOne({username: userData.username});
+    if(!user){
+        throw new Error("User not found");
+    }
+    if(user.password === userData.password){
+        return res.status(200).json({success: true, user: user});
+    } else {
+        return res.status(400).json({success: false, error: "Incorrect Password"})
+    }
+}
+
 module.exports = {
     createLogin,
     updateLogin,
     deleteLogin,
     getLogin,
     getLoginById,
+    login,
 }
