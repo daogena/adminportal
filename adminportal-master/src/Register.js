@@ -1,42 +1,78 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import './Register.css'
 
-function Register() {
-    const history = useHistory(); 
+class Register extends React.Component {
+    state = {
+        email: "",
+        password: "",
+        role: ""
+    }
 
-    function handleRedirect() {
-        let adminRole = document.getElementById("role-input").value; 
-        if (adminRole === 'Support' || adminRole === 'support') {
-            history.push("/Support"); 
+    emailInputHandler = (e) => {    
+        e.preventDefault();
+        this.setState({
+            email: e.target.value
+        })
+    }
+    passwordInputHandler = (e) => {
+        e.preventDefault();
+        this.setState({
+            password: e.target.value
+        })
+    }
+    roleInputHandler = (e) => {
+        e.preventDefault();
+        this.setState({
+            role: e.target.value
+        })
+    }
+
+    formHandler = (e) => {
+        e.preventDefault();
+        fetch("http://localhost:8000/api/user",{
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json",
+            },
+            body: JSON.stringify({
+                username: this.state.email,
+                password: this.state.password,
+                adminRole: this.state.role
+            })
+        })
+        let role = this.state.role; 
+        if (role === 'Support' || role === 'support') {
+            this.props.history.push("/Support")
         }
-        else if (adminRole === 'Finance' || adminRole === 'finance') {
-            history.push("/Finance"); 
+        else if (role === 'Finance' || role === 'finance') {
+            this.props.history.push("./Finance")
+        }
+        else if (role === 'Sales' || role === 'sales') {
+            this.props.history.push("./Sales")
         } 
-        else if (adminRole === 'Sales' || adminRole === 'sales') {
-            history.push("/Sales"); 
+        else if (role === 'HR' || role === 'hr') {
+            this.props.history.push("./HR")
         }
-        else if (adminRole === 'HR' || adminRole === 'hr') {
-            history.push("/HR")
-        }
-        else if (adminRole === 'Tech' || adminRole === 'tech') {
-            history.push("/Tech")
+        else if (role === 'Tech' || role === 'tech') {
+            this.props.history.push("./Tech")
         }
     }
-    function handleClick() {
-        handleRedirect(); 
+    
+    render(){
+        return (
+            <div className = "register-container">
+                <div className="title">REGISTER</div>
+                <form action="" onSubmit={this.formHandler}>
+                       <input type="text" id="email-input" className="email-container" placeholder="Email" onChange={this.emailInputHandler}/>
+                       <input type="password" id="password-input" className="password-container" placeholder="Password" onChange={this.passwordInputHandler}/>
+                       <input type="text" id="role-input" className="role-container" placeholder="Admin role" onChange={this.roleInputHandler}/>
+                       <button className="button">Submit</button>
+                </form>
+            </div>
+        )
     }
-    return (
-        <div className = "register-container">
-            <h1>Registration</h1>
-            <form action="">
-                   <input type="text" id="email-input" className="email-container" placeholder="Email"/>
-                   <input type="text" id="password-input" className="password-container" placeholder="Password"/>
-                   <input type="text" id="role-input" className="role-container" placeholder="Admin role"/>
-                   <button className="button" onClick={handleClick}>Submit</button>
-            </form>
-        </div>
-    )
+    
 }
 
-export default Register
+export default withRouter(Register)
